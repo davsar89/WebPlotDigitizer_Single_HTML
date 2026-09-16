@@ -1,0 +1,3 @@
+# The standalone build is a distributed artifact: never rewrite its line endings,
+# so every clone gets byte-identical output to what was verified.
+WebPlotDigitizer-4.7-standalone.html -text
