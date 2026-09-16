@@ -3,10 +3,15 @@
 [WebPlotDigitizer](https://github.com/ankitrohatgi/WebPlotDigitizer) by Ankit Rohatgi,
 repackaged as **one self-contained `.html` file**.
 
+## Just take the one file
+
 Download [`WebPlotDigitizer-4.7-standalone.html`](WebPlotDigitizer-4.7-standalone.html)
-(1.65 MiB), double-click it, and the full digitizer opens in your browser. No install,
-no server, no network, no Electron. Put it on a USB stick or email it and it works on
-any machine with a modern browser.
+(1.65 MiB) and double-click it. That is the whole program.
+
+No install, no server, no network, no Electron, nothing to sit next to it. Put it on a
+USB stick or email it and it works on any machine with a modern browser. The
+`build/` folder here is optional and is only needed if you want to regenerate the file
+yourself — you never need it to *use* the digitizer.
 
 For comparison, the official desktop build is a 177 MB `.exe` plus ~230 MB of bundled
 Chromium; the hosted version needs a web server.
@@ -93,11 +98,12 @@ header sets `window.pdfjsWorker`, and pdf.js skips worker construction entirely 
 `globalThis.pdfjsWorker.WorkerMessageHandler` already exists — the same mechanism as
 the stock `pdf.worker.entry.js`.
 
-## Rebuilding
+## Rebuilding (optional)
 
-`build_single_file.js` needs a WebPlotDigitizer 4.7 source tree, because it reads the
-already-built `index.html` and the assets it references. Drop both scripts into that
-tree (next to `build_js.sh`) and run:
+You do not need this to use the digitizer. `build/build_single_file.js` requires a
+WebPlotDigitizer 4.7 source tree, because it reads the already-built `index.html` and
+the assets it references. Copy both scripts into that tree (next to `build_js.sh`) and
+run:
 
 ```sh
 node build_single_file.js               # -> WebPlotDigitizer-4.7-standalone.html
